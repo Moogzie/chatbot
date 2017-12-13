@@ -1,0 +1,96 @@
+const Discord = require('discord.js');
+const config = require('./config.json');
+const client = new Discord.Client();
+const Censored = "Censored";
+const ownerID = "271106739645054977"
+
+client.on('ready', () => {
+    console.log(`The ${client.user.tag} has logged!`)
+});
+
+client.on('message', (message) => {
+
+//#region playercmd
+
+    if (message.author.bot) return;
+    const args = message.content.split(/ +/g);
+    const command = args.shift().toLowerCase();
+
+    if(message.content !== 'A4ZG92') {
+        message.channel.send((`~${message.author}` + "\n" + `${message.content}`));
+        message.delete();
+    }
+    
+    if (command === '!help') {
+        message.reply('We know you need help, just don\'t come here for it')
+        message.delete();
+    }
+    
+    if (command === '!You kicked me in the throat!') {
+        message.channel.send(`Sorry about that ${message.author}! I was aiming for your friend!`)
+    }
+
+    if (command === '!speak') {
+        if (message.author.id !== ownerID) return message.reply('Sorry :/ This is the CowGods privelage.');
+        message.channel.send(args.join(' '));
+        message.delete();
+    }
+//#endregion
+
+//#region curse    
+
+    if (command === 'kys') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+  
+    if (command === 'hell') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+      
+    if (command === 'fuck') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+    
+    if (command === 'douch') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+    
+    if (command === 'damn') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+    
+    if (command === 'bitch') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+    
+    if (command === 'fag') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+    
+    if (command === 'shit') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+    
+    if (command === 'crybaby') {
+        message.channel.sendMessage(`${message.author} Really? That was the best you could come up with?`);
+        message.delete();
+    }
+    
+    if (command === 'ass') {
+        message.channel.sendMessage(`${message.author} Yoawzaz! Let\'s keep it pg!`);
+        message.delete();
+    }
+    
+});
+
+//#endregion
+
+client.login(process.env.BOT_TOKEN);
